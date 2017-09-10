@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态添加删除属性</title>
+		<script src="vue.js" type="text/javascript">
+			
+		</script>
+		<style>
+			.active{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p @click='clickMe' :class="{active:isActive}" :style="{color:yellow}">{{message}}</p>
+		</div>
+		<script>
+			var app=new Vue({
+				el:"#app",
+				data:{
+					message:"happy",
+					isActive:true,
+					yellow:"yellow"
+				},
+				methods:{
+					clickMe:function(){
+						this.isActive=!this.isActive
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
